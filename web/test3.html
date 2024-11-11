@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tarea</title>
+    <link rel="shortcut icon" href="../img/pika.png" type="image/x-icon">
+    <link rel="stylesheet" href="../style/test.css">
+</head>
+<body>
+    <header>
+        <h1 class="title-1">Reporte de la tarea de Estructura de Datos</h1>
+        <nav class="container-nav">
+
+            <a class="link-nav" href="./test1.html"><strong>CODIGO: PILA</strong></a><br>
+            <a class="link-nav" href="./test2.html"><strong>CODIGO: COLA</strong></a><br>
+            <a class="link-nav" href="#dos" class="dos"><strong>CODIGO: LISTA SIMPLE</strong></a><br>
+            <a class="link-nav" href="./test4.html"><strong>CODIGO: LISTA DOBLE</strong></a><br>
+            <a class="link-nav" href="./test5.html"><strong>CODIGO: LISTA CIRCULAR</strong></a><br>
+            <a class="link-nav" href="./test6.html"><strong>CODIGO: ARBOL BINARIO</strong></a><br>
+            <a class="link-nav" href="./test7.html"><strong>THANKS</strong></a><br>
+            <a class="link-nav" href="../index.html"><strong>VOLVER</strong></a><br>
+        </nav>
+    </header>
+    <section id="uno" class="uno">
+        <h1>↓</h1>
+        <p> </p>
+    </section>
+    <section id="dos" class="dos">
+        <h1>Ejemplo de una Lista Enlazada en JavaScript</h1>
+        <p>A continuacion se muestra el codigo de una lista enlazada en JavaScript, donde se eliminan los acentos de los nombres:</p>
+        
+        <p>// Clase Nodo<br>
+        class Nodo {<br>
+            constructor(dato) {<br>
+                this.dato = dato;  // El valor que almacena el nodo<br>
+                this.siguiente = null;  // Puntero al siguiente nodo<br>
+            }<br>
+        }<br><br>
+      
+        // Clase Lista Enlazada<br>
+        class ListaEnlazada {<br>
+            constructor() {<br>
+                this.cabeza = null;  // La lista comienza vacia<br>
+            }<br><br>
+      
+            // Agregar un nodo al final de la lista<br>
+            agregarAlFinal(dato) {<br>
+                const nuevoNodo = new Nodo(dato);  // Creamos un nuevo nodo con el dato<br>
+                if (!this.cabeza) {<br>
+                    this.cabeza = nuevoNodo;  // Si la lista esta vacia, el nuevo nodo es la cabeza<br>
+                } else {<br>
+                    let actual = this.cabeza;<br>
+                    while (actual.siguiente) {<br>
+                        actual = actual.siguiente;  // Recorremos hasta el ultimo nodo<br>
+                    }<br>
+                    actual.siguiente = nuevoNodo;  // Enlazamos el ultimo nodo con el nuevo nodo<br>
+                }<br>
+            }<br><br>
+      
+            // Imprimir la lista<br>
+            imprimirLista() {<br>
+                let actual = this.cabeza;<br>
+                let result = '';<br>
+                while (actual) {<br>
+                    result += actual.dato + ' -> ';<br>
+                    actual = actual.siguiente;<br>
+                }<br>
+                result += 'null';  // Fin de la lista<br>
+                console.log(result);<br>
+            }<br>
+        }<br><br>
+      
+        // Ejemplo de uso<br>
+        const lista = new ListaEnlazada();<br>
+        lista.agregarAlFinal(10);<br>
+        lista.agregarAlFinal(20);<br>
+        lista.agregarAlFinal(30);<br>
+        lista.imprimirLista();  // Salida: 10 -> 20 -> 30 -> null<br>
+        </p>
+        
+    
+
+    </section>
+    <footer></footer>
+    <script src="../js/index.js"></script>
+</body>
+</html>

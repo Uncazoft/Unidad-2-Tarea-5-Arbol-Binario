@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tarea</title>
+    <link rel="shortcut icon" href="../img/pika.png"type="image/x-icon">
+    <link rel="stylesheet" href="../style/test.css">
+    
+    
+
+</head>
+<body>
+    <header>
+        <h1 class=" Codigo del Ejercicio 1">Reporte de la tarea de Estructura de Datos</h1>
+        <nav class="container-nav">
+
+            <a class="link-nav" href="./test1.html"><strong> CODIGO: PILA</strong> </a> <br>
+            <a class="link-nav" href="./test2.html"><strong> CODIGO: COLA</strong> </a> <br>
+            <a class="link-nav" href="./test3.html"><strong>CODIGO: LISTA SIMPLE</strong></a><br>
+            <a class="link-nav" href="./test4.html"><strong>CODIGO: LISTA DOBLE</strong></a><br>
+            <a class="link-nav" href="./test5.html"><strong>CODIGO: LISTA CIRCULAR</strong></a><br>
+            <a class="link-nav" href="#dos" class="dos"><strong>CODIGO: ARBOL BINARIO</strong></a><br>
+            <a class="link-nav" href="./test7.html"><strong>THANKS</strong></a><br>
+            <a class="link-nav" href="../index.html"><strong>VOLVER</strong></a><br>
+
+        </nav>
+    </header>
+    <section id="uno" class="uno">
+        <h1>↓
+        </h1>
+        <p> </p>
+    </section>
+    <section id="dos" class="dos">
+        <h1>Codigo Ejercicio ARBOL BINARIO</h1>
+        <p>
+            class Nodo { <br>
+                constructor(dato) {<br>
+                  this.dato = dato;<br>
+                  this.izquierda = null;<br>
+                  this.derecha = null;<br>
+                }<br>
+              }<br>
+              
+              class ArbolBinario {<br>
+                constructor() {<br>
+                  this.raiz = null;<br>
+                }<br>
+              
+                agregar(dato) {<br>
+                  const nuevoNodo = new Nodo(dato);<br>
+                  if (this.raiz === null) {<br>
+                    this.raiz = nuevoNodo;<br>
+                  } else {<br>
+                    this.agregarNodo(this.raiz, nuevoNodo);<br>
+                  }<br>
+                  this.dibujar();<br>
+                }<br>
+              
+                agregarNodo(nodo, nuevoNodo) {<br>
+                  if (nuevoNodo.dato < nodo.dato) {<br>
+                    if (nodo.izquierda === null) {<br>
+                      nodo.izquierda = nuevoNodo;<br>
+                    } else {<br>
+                      this.agregarNodo(nodo.izquierda, nuevoNodo);<br>
+                    }<br>
+                  } else {<br>
+                    if (nodo.derecha === null) {<br>
+                      nodo.derecha = nuevoNodo;<br>
+                    } else {<br>
+                      this.agregarNodo(nodo.derecha, nuevoNodo);<br>
+                    }<br>
+                  }<br>
+                }<br>
+              
+                buscar(dato) {<br>
+                  return this.buscarNodo(this.raiz, dato);<br>
+                }<br>
+              
+                buscarNodo(nodo, dato) {<br>
+                  if (nodo === null || nodo.dato === dato) <br>{
+                    return nodo;<br>
+                  }<br>
+                  if (dato < nodo.dato) {<br>
+                    return this.buscarNodo(nodo.izquierda, dato);<br>
+                  } else {<br>
+                    return this.buscarNodo(nodo.derecha, dato);<br>
+                  }<br>
+                }<br>
+                <br>
+                eliminar(dato) {<br>
+                  this.raiz = this.eliminarNodo(this.raiz, dato);<br>
+                  this.dibujar();<br>
+                }<br>
+              
+                eliminarNodo(nodo, dato) {<br>
+                  if (nodo === null) {<br>
+                    return null;<br>
+                  }<br>
+                  if (dato < nodo.dato) {<br>
+                    nodo.izquierda = this.eliminarNodo(nodo.izquierda, dato);<br>
+                  } else if (dato > nodo.dato) {<br>
+                    nodo.derecha = this.eliminarNodo(nodo.derecha, dato);<br>
+                  } else {<br>
+                    // Nodo con solo un hijo o sin hijos<br>
+                    if (nodo.izquierda === null) {<br>
+                      return nodo.derecha;<br>
+                    } else if (nodo.derecha === null) {<br>
+                      return nodo.izquierda;<br>
+                    }<br>
+                    // Nodo con dos hijos: obtener el sucesor (el mas pequeno de los mayores)<br>
+                    nodo.dato = this.minValor(nodo.derecha);<br>
+                    nodo.derecha = this.eliminarNodo(nodo.derecha, nodo.dato);<br>
+                  }<br>
+                  return nodo;<br>
+                }<br>
+              
+                minValor(nodo) {<br>
+                  let minv = nodo.dato;<br>
+                  while (nodo.izquierda !== null) {<br>
+                    minv = nodo.izquierda.dato;<br>
+                    nodo = nodo.izquierda;<br>
+                  }<br>
+                  return minv;<br>
+                }<br>
+              
+                dibujar() {<br>
+                  const contenedor = document.getElementById('arbol-container');<br>
+                  contenedor.innerHTML = ''; // Limpiar el contenedor<br>
+                  this.dibujarNivel(this.raiz, contenedor, 0);<br>
+                }<br>
+              
+                dibujarNivel(nodo, contenedor, nivel) {<br>
+                  if (!nodo) return;<br>
+                  let divNivel = contenedor.querySelector(`.nivel[data-nivel="${nivel}"]`);<br>
+                  if (!divNivel) {<br>
+                    divNivel = document.createElement('div');<br>
+                    divNivel.className = 'nivel';<br>
+                    divNivel.setAttribute('data-nivel', nivel);<br>
+                    contenedor.appendChild(divNivel);<br>
+                  }<br>
+                  const divNodo = document.createElement('div');<br>
+                  divNodo.className = 'nodo';<br>
+                  divNodo.innerText = nodo.dato;<br>
+                  divNivel.appendChild(divNodo);<br>
+              
+                  this.dibujarNivel(nodo.izquierda, contenedor, nivel + 1);<br>
+                  this.dibujarNivel(nodo.derecha, contenedor, nivel + 1);<br>
+                }<br>
+              
+                inOrder(nodo, resultado = []) {<br>
+                  if (nodo) {<br>
+                    this.inOrder(nodo.izquierda, resultado);<br>
+                    resultado.push(nodo.dato);<br>
+                    this.inOrder(nodo.derecha, resultado);<br>
+                  }<br>
+                  return resultado;<br>
+                }<br>
+              
+                verificarBST() {<br>
+                  const datos = this.inOrder(this.raiz);<br>
+                  for (let i = 1; i < datos.length; i++) {<br>
+                    if (datos[i] < datos[i - 1]) {<br>
+                      return false;<br>
+                    }<br>
+                  }
+                  return true;<br>
+                }
+              }
+              
+              const arbol = new ArbolBinario();<br>
+              arbol.agregar(50);<br>
+              arbol.agregar(30);<br>
+              arbol.agregar(70);<br>
+              arbol.agregar(20);<br>
+              arbol.agregar(40);<br>
+              arbol.agregar(60);<br>
+              arbol.agregar(80);<br>
+              arbol.agregar(10);<br>
+              arbol.agregar(25);<br>
+              arbol.agregar(35);<br>
+              arbol.agregar(45);<br>
+              arbol.agregar(55);<br>
+              arbol.agregar(65);<br>
+              arbol.agregar(75);<br>
+              arbol.agregar(85);<br>
+              arbol.agregar(5);<br>
+              arbol.agregar(15);<br>
+              arbol.agregar(22);<br>
+              arbol.agregar(27);<br>
+              arbol.agregar(33);<br>
+              arbol.agregar(37);<br>
+              arbol.agregar(42);<br>
+              arbol.agregar(48);<br>
+              arbol.agregar(52);<br>
+              arbol.agregar(58);<br>
+              arbol.agregar(62);<br>
+              arbol.agregar(68);<br>
+              arbol.agregar(72);<br>
+              arbol.agregar(78);<br>
+              arbol.agregar(82);<br>
+              arbol.agregar(88);<br>
+              
+              console.log("El arbol es un BST valido:", arbol.verificarBST());<br>
+              console.log("Nodo buscado (45):", arbol.buscar(45));<br>
+              arbol.eliminar(45);<br>
+              console.log("El arbol es un BST valido despues de eliminar 45:", arbol.verificarBST());<br>
+              console.log("Nodo buscado (45) despues de eliminar:", arbol.buscar(45));<br><br><br><br><br>
+            
+        </p>
+            
+
+    </section>
+    <footer></footer>
+    <script src="../js/index.js"></script>
+</body>
+</html>

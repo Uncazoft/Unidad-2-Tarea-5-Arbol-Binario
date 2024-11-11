@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tarea</title>
+    <link rel="shortcut icon" href="../img/pika.png"type="image/x-icon">
+    <link rel="stylesheet" href="../style/test.css">
+
+</head>
+<body>
+    <header>
+        <h1 class="title-1">Reporte de la tarea de Estructura de Datos</h1>
+        <nav class="container-nav">
+
+            <a class="link-nav" href="./test1.html"><strong> CODIGO: PILA</strong> </a> <br>
+            <a class="link-nav" href="#dos" class="dos"><strong> CODIGO: COLA</strong> </a> <br>
+            <a class="link-nav" href="./test3.html"><strong> CODIGO: LISTA SIMPLE</strong> </a> <br>
+            <a class="link-nav" href="./test4.html"><strong> CODIGO: LISTA DOBLE</strong> </a> <br>
+            <a class="link-nav" href="./test5.html"><strong> CODIGO: LISTA CIRCULAR</strong> </a> <br>
+            <a class="link-nav" href="./test6.html"><strong> CODIGO: ARBOL BINARIO</strong> </a> <br>
+            <a class="link-nav" href="./test7.html"><strong>THANKS</strong></a><br>
+            <a class="link-nav" href="../index.html"><strong>VOLVER</strong></a><br>
+        </nav>
+    </header>
+    <section id="uno" class="uno">
+        <h1>↓
+        </h1>
+        <p> </p>
+    </section>
+    <section id="dos" class="dos">
+        <h1>Ejemplo de una Cola (Queue) en JavaScript</h1>
+        <p>A continuacion se muestra el codigo de una cola (queue) en JavaScript, donde se eliminan los acentos de los nombres:</p>
+        
+        <p>class Queue {<br>
+        constructor() {<br>
+          this.queue = [];<br>
+        }<br><br>
+      
+        enqueue(element) {<br>
+          this.queue.push(element);<br>
+          return this.queue;<br>
+        }<br><br>
+      
+        dequeue() {<br>
+          return this.queue.shift();<br>
+        }<br><br>
+      
+        peek() {<br>
+          return this.queue[0];<br>
+        }<br><br>
+      
+        size() {<br>
+          return this.queue.length;<br>
+        }<br><br>
+      
+        isEmpty() {<br>
+          return this.queue.length === 0;<br>
+        }<br><br>
+      
+        print() {<br>
+          return this.queue;<br>
+        }<br>
+        }<br><br>
+      
+        const queue = new Queue();<br>
+        console.log(queue.enqueue('The Rock')); // ['The Rock']<br>
+        console.log(queue.enqueue('John Cena')); // ['The Rock', 'John Cena']<br>
+        console.log(queue.enqueue('Stone Cold Steve Austin')); // ['The Rock', 'John Cena', 'Stone Cold Steve Austin']<br>
+        console.log(queue.dequeue()); // 'The Rock'<br>
+        console.log(queue.peek()); // 'John Cena'<br>
+        console.log(queue.isEmpty()); // false<br>
+        console.log(queue.print()); // ['John Cena', 'Stone Cold Steve Austin']<br>
+        </p>
+
+    </section>
+    <footer></footer>
+    <script src="../js/index.js"></script>
+</body>
+</html>

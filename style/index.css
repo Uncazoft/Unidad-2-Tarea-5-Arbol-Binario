@@ -1,0 +1,50 @@
+body{
+    margin: 0;
+    padding: 0;
+    background: rgb(27,54,255);
+    background-image: radial-gradient( circle farthest-corner at 10% 20%,  rgba(2,37,78,1) 0%, rgba(4,56,126,1) 19.7%, rgba(85,245,221,1) 100.2% );    /* overflow: hidden; */
+    color: azure;
+    font-family: "titulo1";
+}
+h1, h2, h3, h4{
+    font-family: "regular";
+}
+header{
+    height: 12rem;
+    display: flex;
+    position: fixed;
+    top:0;
+    background: linear-gradient(270deg, rgba(#490AA2) 0%, rgb(#2044BA) 25%, rgb(#3425D9) 45%, rgb(#5CB3FA) 55%, rgba(#25BFD7) 100%);
+}
+.title-1{
+    margin: 0 0 0 0;
+}
+.container-nav{
+    display: flex;
+    flex-wrap: wrap;
+}
+.link-nav{
+    background-color: #fff;
+    padding: 1rem;
+    width: 10rem;
+    height: 1.5rem;
+    margin: 1rem 1rem 0 0;
+    border: solid 3px #E3371E;
+    border-radius: .9rem;
+    display: grid;
+    place-content: right;
+    text-decoration: none;
+    color: #0593A2;
+}
+.uno{
+    margin-top: 14rem;
+}
+
+@font-face {
+    font-family: "titulo1";
+    src: url("../fonts/Garet-Book.ttf");
+}
+@font-face {
+    font-family: "regular";
+    src: url("../fonts/PIGARNOS\ NEUE\ Regular.ttf");
+}

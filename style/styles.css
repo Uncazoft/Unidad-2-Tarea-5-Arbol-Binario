@@ -1,0 +1,45 @@
+body {
+  font-family: Arial, sans-serif;
+  text-align: center;
+  text-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1);
+  background-color: #f4f4f4;
+}
+
+h1 {
+  color: #f8f8f8;
+}
+
+input, button {
+  margin: 9px;
+  padding: 20px;
+  font-size: 19px;
+  background-color: #b76666;
+  color: #f8f8f8;
+  font-family: Arial, sans-serif;
+  text-align: center;
+  text-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1);
+
+}
+
+#arbol-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 12px;
+}
+
+.nodo {
+  padding: 19px;
+  margin: 7px;
+  border: 2px solid #333;
+  border-radius: 5px;
+  background-color: #b76666;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1);
+}
+
+.nivel {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}

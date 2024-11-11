@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tarea</title>
+    <link rel="shortcut icon" href="../img/pika.png"type="image/x-icon">
+    <link rel="stylesheet" href="../style/test1.css">
+    <link rel="stylesheet" href="../style/styles.css">
+</head>
+
+</head>
+<body>
+    <header>
+        <h1 class=" Codigo del Ejercicio 1">Reporte de la tarea de Estructura de Datos</h1>
+
+        
+        <nav class="container-nav">
+
+            <a class="link-nav" href="./test1.html"><strong>PILA</strong></a><br>
+            <a class="link-nav" href="./test2.html"><strong>COLA</strong></a><br>
+            <a class="link-nav" href="./test3.html"><strong>LISTA SIMPLE</strong></a><br>
+            <a class="link-nav" href="./test4.html"><strong>LISTA DOBLE</strong></a><br>
+            <a class="link-nav" href="./test5.html"><strong> LISTA CIRCULAR</strong></a><br>
+            <a class="link-nav" href="#dos" class="dos"><strong>ARBOL BINARIO</strong></a><br>
+            <a class="link-nav" href="../web/test6.html"><strong>CODIGO EJERCICIO: ARBOL BINARIO</strong></a><br>
+            <a class="link-nav" href="javascript:history.back()"><strong>REGRESAR</strong></a><br>
+            <a class="link-nav" href="../index.html"><strong>VOLVER</strong></a><br>
+        </nav>
+    </header>
+    <section id="uno" class="uno">
+        <h1><strong><center>↓</center></strong></h1>
+    </section>
+    <section id="dos" class="dos">
+        <h1>Arbol Binario</h1>
+        <p>Un arbol binario es una estructura de datos jerarquica en la que cada nodo tiene como maximo dos hijos, denominados generalmente "izquierdo" y "derecho".<br>
+             Los arboles binarios se utilizan en una variedad de aplicaciones, como la representacion de expresiones aritmeticas, la gestion de bases de datos y la estructura de archivos.</p>
+        
+        <p><strong>Caracteristicas:</strong><br>
+            - Cada nodo tiene un solo hijo (izquierdo o derecho).<br>
+            - Este tipo de arbol tiene una estructura muy similar a una lista enlazada, lo que hace que sus operaciones de busqueda y modificacion sean menos eficientes en comparacion con un arbol binario equilibrado.<br>
+            - La profundidad del arbol es igual al numero de nodos, lo que lo hace ineficiente para operaciones como la busqueda, ya que puede llegar a tener una complejidad O(n).<br>
+            </p>
+
+            <h1>Arbol Degenerado</h1>
+            <p>Un arbol degenerado es una estructura de datos que se forma cuando todos los nodos tienen como maximo un hijo.<br>
+                 Esto significa que el arbol se convierte en una estructura lineal similar a una lista enlazada. <br>
+                 Los arboles degenerados pueden ser el resultado de una insercion desbalanceada de nodos en un arbol binario.</p>
+            
+            <p><strong>Caracteristicas:</strong><br>
+            - Un Hijo por Nodo: Cada nodo en el arbol tiene como maximo un hijo. Esto puede ser un hijo izquierdo o un hijo derecho.<br>
+            - Estructura Lineal: Debido a la disposicion de los nodos, el arbol degenerado se asemeja a una lista enlazada, ya que no tiene ramas que se extienden a ambos lados.<br>
+            - Ineficiencia: Las operaciones de busqueda, insercion y eliminacion en un arbol degenerado son ineficientes, con una complejidad de tiempo de O(n), donde n es el numero de nodos. <br>
+            Esto se debe a que, en el peor de los casos, se necesita recorrer todos los nodos de la estructura.<br>
+            - No Balanceado: Un arbol degenerado no esta balanceado en ramificaciones.<br>
+            </p>
+
+
+</p>
+
+
+        <h1>Visualizacion de un Arbol Binario</h1>
+        <div id="arbol-container"></div>
+      </body>
+            
+
+    </section>
+    <footer></footer>
+    <script src="../js/indexx.js"></script>
+
+    <section> 
+        <p>¡Agrega, Busca o Elimina un Nodo en un Arbol Binario!</p>
+    </section>
+
+    <section>
+        <h1>¡ANIMATEEE !</h1>
+        <p>¡Gracias por visitar!</p>
+    </section>
+
+    <div>
+        <input type="number" id="numero" placeholder="Número" class="input-numero step="5" min="0" max="100" size="10">
+        <button onclick="agregarNumero()">Agregar</button>
+        <button onclick="buscarNumero()">Buscar</button>
+        <button onclick="eliminarNumero()">Eliminar</button>
+    </div>
+    
+    <div id="arbol-container"></div>
+    
+
+</body>
+</html>
+
+
+
+
+
+
