@@ -30,8 +30,8 @@ input, button {
 }
 
 .nodo {
-  padding: 19px;
-  margin: 7px;
+  padding: 15px;
+  margin: 5px;
   border: 2px solid #333;
   border-radius: 5px;
   background-color: #b76666;
